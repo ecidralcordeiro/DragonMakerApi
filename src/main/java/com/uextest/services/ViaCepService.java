@@ -1,6 +1,7 @@
-package com.uextest.service;
+package com.uextest.services;
 
-import com.uextest.model.ViaCepResponse;
+import com.uextest.models.ViaCepResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -11,9 +12,9 @@ public class ViaCepService {
     @Value("${viaCep.url}")
     private String viaCepUrl;
 
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
-    public ViaCepService(RestTemplate restTemplate) {
+    public ViaCepService(@Autowired RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 

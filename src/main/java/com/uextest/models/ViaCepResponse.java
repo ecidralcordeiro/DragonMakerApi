@@ -1,4 +1,4 @@
-package com.uextest.model;
+package com.uextest.models;
 
 public class ViaCepResponse {
 
