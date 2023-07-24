@@ -24,18 +24,21 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     private String login;
     private String password;
+    @Enumerated(EnumType.STRING)
     private UserRole role;
 
-    @OneToMany
+    @ManyToMany
     @JoinTable(
             name = "user_contacts",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "contact_id")
-    )    private Set<Contact> contacts = new HashSet<>();
+    )
+    private List<Contact> contacts;
+
 
     public User(String login, String password, UserRole role){
         this.login = login;
