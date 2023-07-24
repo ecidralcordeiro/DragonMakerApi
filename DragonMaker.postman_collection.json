@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "8729e82b-86e5-4b22-b294-da659d839c4e",
+		"name": "DragonMaker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15598442"
+	},
+	"item": [
+		{
+			"name": "GET Contact",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6InVzZXIxIiwiZXhwIjoxNjkwMDk1Mzk4fQ.Qdo9T0qxBPy2lv8KdQ23MYItjZJQ49mkaZSv-Xv71RU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/contact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Contact by Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6InVzZXIxIiwiZXhwIjoxNjkwMDk1Mzk4fQ.Qdo9T0qxBPy2lv8KdQ23MYItjZJQ49mkaZSv-Xv71RU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/contact/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contact",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Contact by query",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6InVzZXIxIiwiZXhwIjoxNjkwMDk1Mzk4fQ.Qdo9T0qxBPy2lv8KdQ23MYItjZJQ49mkaZSv-Xv71RU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/contact/filter?search=Eduardo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contact",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "Eduardo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Contact",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImVkdWFyZG8iLCJleHAiOjE2OTAxOTY1MDR9.rfcwaLFfjJUxRNPYTXwYGrWbZuHNCEKyMf_cyOuVsk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"João da Silva\",\r\n  \"cpf\": \"123.456.789-00\",\r\n  \"phone\": \"(11) 98765-4321\",\r\n  \"address\": {\r\n    \"id\": 1\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/contact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Address",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImVkdWFyZG8iLCJleHAiOjE2OTAxOTY1MDR9.rfcwaLFfjJUxRNPYTXwYGrWbZuHNCEKyMf_cyOuVsk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"street\": \"Rua\",\r\n    \"number\": \"456\",\r\n    \"neighborhood\": \"Bairro Novo\",\r\n    \"city\": \"Nova Cidade\",\r\n    \"state\": \"XX\",\r\n    \"postalCode\": \"12345-678\",\r\n    \"country\": \"País\",\r\n    \"latitude\": -22.222222,\r\n    \"longitude\": -44.444444\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/contact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImVkdWFyZG8iLCJleHAiOjE2OTAxOTY1MDR9.rfcwaLFfjJUxRNPYTXwYGrWbZuHNCEKyMf_cyOuVsk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"user1\",\r\n    \"password\": \"password1\",\r\n    \"role\": \"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Address",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImVkdWFyZG8iLCJleHAiOjE2OTAxOTY1MDR9.rfcwaLFfjJUxRNPYTXwYGrWbZuHNCEKyMf_cyOuVsk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"street\": \"Nova Rua\",\r\n    \"number\": \"456\",\r\n    \"neighborhood\": \"Bairro Novo\",\r\n    \"city\": \"Nova Cidade\",\r\n    \"state\": \"XX\",\r\n    \"postalCode\": \"12345-678\",\r\n    \"country\": \"País Novo\",\r\n    \"latitude\": -22.222222,\r\n    \"longitude\": -44.444444\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/address/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"address",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Contact",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImVkdWFyZG8iLCJleHAiOjE2OTAxOTY1MDR9.rfcwaLFfjJUxRNPYTXwYGrWbZuHNCEKyMf_cyOuVsk8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"João da Silva\",\r\n  \"cpf\": \"123.456.789-00\",\r\n  \"phone\": \"(11) 98765-4551\",\r\n  \"address\": {\r\n    \"id\": 1\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/contact/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contact",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"user1\",\r\n    \"password\": \"password1\",\r\n    \"role\": \"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhdXRoLWFwaSIsInN1YiI6ImVkdWFyZG8iLCJleHAiOjE2OTAyMDk0NDV9.2SoivdOzTSaeMDbcT3ZhroDw63bbaFVkI7R9LqcwLVs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/contact/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contact",
+						"9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
